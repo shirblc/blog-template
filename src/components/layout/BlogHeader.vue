@@ -7,3 +7,11 @@
 </template>
 
 <script lang="ts" src="./BlogHeader.ts"></script>
+
+<style lang="sass" scoped>
+  #blogHeader
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+</style>
