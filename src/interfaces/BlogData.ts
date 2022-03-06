@@ -2,7 +2,7 @@ export interface BlogComment {
   username: string;
   email: string;
   comment: string;
-  responses: BlogComment[];
+  comments: BlogComment[];
 }
 
 export interface BlogPost {
