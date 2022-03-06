@@ -1,12 +1,12 @@
 export interface BlogSidebarItem {
-  rank: Number;
-  text: String;
-  link?: String;
+  rank: number;
+  text: string;
+  link?: string;
 }
 
 export default interface BlogSidebarGroup {
-  name: String;
+  name: string;
   type: "select" | "scroll" | "regular";
-  image?: String;
+  image?: string;
   items: BlogSidebarItem[];
 }

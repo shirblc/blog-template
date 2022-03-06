@@ -1,12 +1,9 @@
 <template>
   <div id="blogMain">
     <template v-if="displayPosts.length > 0">
-      <div v-for="post in displayPosts" :key="post.id">
-        <h3>{{ post.title }}</h3>
-        <div>{{ post.text }}</div>
-      </div>
+      <BlogPost v-for="post in displayPosts" :key="post.id" :post="post" />
     </template>
-    <span class="noposts" v-else>
+    <span v-else class="noposts">
       There are no posts here. Write your first one now!
     </span>
   </div>

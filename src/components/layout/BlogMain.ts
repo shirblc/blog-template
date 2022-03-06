@@ -1,13 +1,15 @@
 import { defineComponent, PropType } from "vue";
-import { BlogPost } from "../../interfaces/BlogData";
+import { BlogPost as BlogPostType } from "../../interfaces/BlogData";
+import BlogPost from "../BlogPost.vue";
 
 export default defineComponent({
-  name: "blog-main",
+  name: "BlogMain",
+  components: { BlogPost },
   props: {
     infiniteScroll: { type: Boolean, default: false },
     posts: {
-      type: Array as PropType<BlogPost[]>,
-      default: () => [] as BlogPost[],
+      type: Array as PropType<BlogPostType[]>,
+      default: () => [] as BlogPostType[],
     },
   },
   data: () => ({
@@ -17,7 +19,7 @@ export default defineComponent({
     startIndex(): number {
       return (this.page - 1) * 5;
     },
-    displayPosts(): BlogPost[] {
+    displayPosts(): BlogPostType[] {
       return this.infiniteScroll
         ? this.posts
         : this.posts.slice(this.startIndex, this.startIndex + 5);
