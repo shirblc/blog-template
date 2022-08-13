@@ -12,7 +12,14 @@
   </div>
 </template>
 
-<script src="./BlogSidebar.ts" lang="ts"></script>
+<script setup lang="ts">
+import { reactive } from 'vue';
+import BlogSidebarGroup from "../../interfaces/Layout";
+
+const displayGroups: BlogSidebarGroup[] = reactive([
+  { name: "Me", type: "regular", image: "", items: [] },
+]);
+</script>
 
 <style lang="sass" scoped>
 #sidebar

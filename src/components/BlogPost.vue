@@ -11,7 +11,23 @@
   </div>
 </template>
 
-<script src="./BlogPost.ts" lang="ts"></script>
+<script setup lang="ts">
+import { PropType, ref } from "vue";
+import { BlogPost } from "../interfaces/BlogData";
+
+const props = defineProps({
+  post: { type: Object as PropType<BlogPost>, required: true },
+});
+
+const showComments = ref(false);
+
+/**
+ * Show/hide the comments
+ */
+function toggleComments() {
+    showComments.value = !showComments.value;
+  }
+</script>
 
 <style lang="sass" scoped>
 .blogPost

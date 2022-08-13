@@ -6,6 +6,7 @@ export interface BlogComment {
 }
 
 export interface BlogPost {
+  id: number;
   title: string;
   text: string;
   comments: BlogComment[];

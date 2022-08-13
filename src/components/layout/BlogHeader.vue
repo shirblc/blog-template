@@ -6,7 +6,16 @@
   </header>
 </template>
 
-<script lang="ts" src="./BlogHeader.ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const props = defineProps({
+  blogName: { type: String, default: "Name" },
+});
+
+const headerSubtitle = ref("");
+const imgSrc = ref("");
+</script>
 
 <style lang="sass" scoped>
 #blogHeader
