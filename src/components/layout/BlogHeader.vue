@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const props = defineProps({
   blogName: { type: String, default: "Name" },
@@ -17,7 +17,7 @@ const headerSubtitle = ref("");
 const imgSrc = ref("");
 </script>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
 #blogHeader
   width: 100%
   display: flex

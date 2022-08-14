@@ -4,18 +4,16 @@
   <BlogSidebar v-if="showSidebar" />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import BlogHeader from "./components/layout/BlogHeader.vue";
+<script setup lang="ts">
 import BlogMain from "./components/layout/BlogMain.vue";
-import BlogSidebar from './components/layout/BlogSidebar.vue';
+import BlogHeader from "./components/layout/BlogHeader.vue";
+import BlogSidebar from "./components/layout/BlogSidebar.vue";
+import { ref } from "vue";
 
-export default defineComponent({
-  components: { BlogHeader, BlogMain, BlogSidebar },
-  data: () => ({
-    showSidebar: true,
-  })
-})
+const showSidebar = ref(false);
 </script>
 
-<style src="./sass/styles.sass" lang="sass"></style>
+<style scoped lang="sass">
+div
+    padding: 10px
+</style>

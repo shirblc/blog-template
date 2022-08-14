@@ -25,11 +25,11 @@ const showComments = ref(false);
  * Show/hide the comments
  */
 function toggleComments() {
-    showComments.value = !showComments.value;
-  }
+  showComments.value = !showComments.value;
+}
 </script>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
 .blogPost
   display: flex
   flex-direction: column

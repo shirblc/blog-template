@@ -17,10 +17,10 @@ import BlogPost from "../BlogPost.vue";
 
 const props = defineProps({
   infiniteScroll: { type: Boolean, default: false },
-    posts: {
-      type: Array as PropType<BlogPostType[]>,
-      default: () => [] as BlogPostType[],
-    },
+  posts: {
+    type: Array as PropType<BlogPostType[]>,
+    default: () => [] as BlogPostType[],
+  },
 });
 
 const page = ref(1);
@@ -30,10 +30,10 @@ const displayPosts = computed(() => {
   return props.infiniteScroll
     ? props.posts
     : props.posts.slice(startIndex.value, startIndex.value + 5);
-}) 
+});
 </script>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
 #blogMain
   padding: 10px
   flex-grow: 1
