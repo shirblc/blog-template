@@ -10,17 +10,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "@vue/reactivity";
-import { PropType, ref } from "vue";
-import { BlogPost as BlogPostType } from "../../interfaces/BlogData";
+import { computed, ref } from "vue";
 import BlogPost from "../BlogPost.vue";
+import { useStore } from '../../stores/posts';
+
+const store = useStore();
 
 const props = defineProps({
   infiniteScroll: { type: Boolean, default: false },
-  posts: {
-    type: Array as PropType<BlogPostType[]>,
-    default: () => [] as BlogPostType[],
-  },
 });
 
 const page = ref(1);
@@ -28,8 +25,8 @@ const page = ref(1);
 const startIndex = computed(() => (page.value - 1) * 5);
 const displayPosts = computed(() => {
   return props.infiniteScroll
-    ? props.posts
-    : props.posts.slice(startIndex.value, startIndex.value + 5);
+    ? store.posts
+    : store.posts.slice(startIndex.value, startIndex.value + 5);
 });
 </script>
 
